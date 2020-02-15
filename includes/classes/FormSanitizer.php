@@ -4,7 +4,8 @@
             // remove the html tag and just keep the input
             $inputText = strip_tags($inputText);
             // remove space from input
-            $inputText = trim($inputText);
+            $inputText = str_replace(" ", "", $inputText);
+            // $inputText = trim($inputText);
             // lowercase
             $inputText = strtolower($inputText);
             // Capitalize first letter
