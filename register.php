@@ -3,7 +3,6 @@ require_once("includes/config.php");
 require_once("includes/classes/FormSanitizer.php");
 require_once("includes/classes/Account.php");
 require_once("includes/classes/Constants.php");
-require_once("includes/login.php");
 
     $account = new Account($con);
 
@@ -21,6 +20,7 @@ require_once("includes/login.php");
 
         if($success) {
             // Store session 
+            $_SESSION["userLoggedIn"] = $username;
             header("Location: index.php");
         }
     }

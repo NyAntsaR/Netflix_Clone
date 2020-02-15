@@ -14,6 +14,7 @@
 
         if($success) {
             // Store session 
+            $_SESSION["userLoggedIn"] = $username;
             header("Location: index.php");
         }
     }
