@@ -18,6 +18,13 @@
             header("Location: index.php");
         }
     }
+
+    // leave the value of the username filled if error
+    function getInputValue($name) {
+        if(isset($_POST[$name])) {
+            echo $POST[$name];
+        }
+    }
 ?>
 <!DOCTYPE html>
 
@@ -37,7 +44,7 @@
                 </div>
                 <form method="POST">
                     <?php echo $account->getError(Constants::$loginFailed); ?>
-                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" value="<?php getInputValue("username"); ?>" required>
                     <input type="password" name="password" placeholder="Password" required> 
                     <input type="submit" name="submitButton" value="SUBMIT">
                 </form>
