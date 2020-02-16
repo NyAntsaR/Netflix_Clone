@@ -26,7 +26,7 @@ require_once("includes/classes/Entity.php");
                 "<div class='previewContainer'>
                 
                     <img class='previewImage' src='$thumbnail' hidden>
-                    <video autoplay muted class='previewVideo'>
+                    <video autoplay muted class='previewVideo' onended='previewEnded()'>
                         <source src='$preview' type='video/mp4'>
                     </video>
 
